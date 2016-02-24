@@ -1,0 +1,51 @@
+{
+  "description": "The Liuitt Framework's Container Component.",
+  "keywords": ["components", "liuitt", "container"],
+  "license": "MIT",
+  "homepage": "http://liuitt.com",
+  "support": {
+    "issues": "https://github.com/liuitt/fw-component-container/issues",
+    "source": "https://github.com/liuitt/fw-component-container"
+  },
+  "authors": [
+    {
+      "name": "Gilberto Albino",
+      "email": "gilbertoalbino@gmail.com"
+    }
+  ],
+  "config": {
+    "vendor-dir": "vendor/liuitt/fw-component-container"
+  },
+  "repositories": [
+    {
+      "type": "package",
+      "package": {
+        "name": "liuitt/fw-component-container",
+        "version": "master",
+        "source": {
+          "url": "https://github.com/liuitt/fw-component-container",
+          "type": "git",
+          "reference": "master"
+        }
+      }
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Liuitt\\": "src/"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "1.0-dev"
+    }
+  },
+  "minimum-stability": "dev"
+}
+
