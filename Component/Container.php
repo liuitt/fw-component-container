@@ -12,7 +12,7 @@
 use Liuitt\Component\Container\Contract\Action\AbstractContainer;
 
 /**
- * Classe Final Registry
+ * Classe Final Container
  *
  * Esta classe é disponibilizada para acesso como é o componente.
  * Caso deseje estender o componente em seus projetos, veja e utilize:
