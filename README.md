@@ -1,4 +1,4 @@
-# fw-component-container
+# Liuitt Container
 O Componente "Container" para o Framework Liuitt.
 
 Este componente é utilizado para Injeção de Dependências de uma forma simples e prática.
@@ -79,7 +79,10 @@ $celular = $container->resolve('Celular');
 
 Inspecionando a variável $celular, você deverá ver algo como:
 
+```php
 <pre>echo var_export($celular, true) . '<hr>';</pre>
+```
+
 
 
 
