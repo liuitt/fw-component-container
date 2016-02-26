@@ -30,8 +30,8 @@ Para fins didáticos de ilustração, todos os exemplos documentados a seguir ut
 ```php
 class Produto
 {
-    public $modelo;
-    public $fabricante;
+    private $modelo;
+    private $fabricante;
 
     public function __construct($modelo, $fabricante)
     {
@@ -42,9 +42,11 @@ class Produto
 
 class Carrinho
 {
-    public function __construct(Product $product)
+    private $produto;
+    
+    public function __construct(Produto $produto)
     {
-        echo var_export($product, true);
+        echo var_export($produto, true);
     }
 }
 ```
