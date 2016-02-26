@@ -71,6 +71,14 @@ $container->register('Celular', function(){
 
 No exemplo acima, foi criado um __Registro__ com o nome 'Celular', que retornará um objeto Produto com modelo __Nokia 1520__ e fabricante __Microsoft__.
 
+Alternativamene você poderá utilizar chamadas estáticas:
+
+```php
+Container::register('Tablet', function(){
+    return new Produto('Asus Fonepad 7', 'Asus');
+});
+``` 
+
 ### Container::resolve(String $alias)
 
 Para resolver um Registro você deverá informar o nome registrado para o mesmo:
@@ -79,11 +87,30 @@ Para resolver um Registro você deverá informar o nome registrado para o mesmo:
 $celular = $container->resolve('Celular');
 ```
 
-Inspecionando a variável $celular, você deverá ver algo como:
+ou estáticamente:
+
+```php
+$tablet = Container::resolve('Tablet');
+```
+Inspecionando as variáveis __$celular__ e __$tablet__, 
 
 ```php
 echo '<pre>';
-echo var_export($celular, true) . '<hr>';
+echo var_export($celular, true) . PHP_EOL;
+echo var_export($tablet, true) . PHP_EOL;
+```
+
+você deverá ver algo como:
+
+```
+Produto::__set_state(array(
+   'modelo' => 'Nokia 1520',
+   'fabricante' => 'Microsoft',
+))
+Produto::__set_state(array(
+   'modelo' => 'Asus Fonepad 7',
+   'fabricante' => 'Asus',
+))
 ```
 
 
