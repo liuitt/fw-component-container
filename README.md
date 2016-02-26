@@ -113,7 +113,7 @@ Produto::__set_state(array(
    'fabricante' => 'Asus',
 ))
 ```
-### Container::resolveWith(String $alias, $args)
+### Container::resolveWith(String $alias, Array $args)
 
 Permite passar argumentos no momento em que um Registro é resolvido. No entanto, estes DEVEM ser informados na Função Anônima no momento que algo é registrado.
 
