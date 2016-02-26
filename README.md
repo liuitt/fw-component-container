@@ -56,7 +56,8 @@ class Carrinho
 Para utilizar basta instanciar o Componente __Container__ sem passar argumentos para o Construtor:
 
 ```php
-$container = new Liuitt\Component\Container();
+use Liuitt\Component\Container;
+$container = new Container();
 ```
 
 ### Container::register(String $alias, Callback $callback)
@@ -87,7 +88,7 @@ Para resolver um Registro você deverá informar o nome registrado para o mesmo:
 $celular = $container->resolve('Celular');
 ```
 
-ou estáticamente:
+ou estaticamente:
 
 ```php
 $tablet = Container::resolve('Tablet');
@@ -112,9 +113,48 @@ Produto::__set_state(array(
    'fabricante' => 'Asus',
 ))
 ```
+### Container::resolveWith(String $alias, $args)
 
+Permite passar argumentos no momento em que um Registro é resolvido. No entanto, estes DEVEM ser informados na Função Anônima no momento que algo é registrado.
 
+__Registrando com argumentos anonimamente__
 
+```php
+Container::register('Celulares', function($modelo, $fabricante){
+    return new Produto($modelo, $fabricante);
+});
+```
+
+__Resolvendo com argumentos__
+```php
+$iphone = $container->resolveWith('Celulares', ['iPhone S6', 'Apple'])
+```
+
+ou estaticamente
+
+```php
+$galaxy = Container::resolveWith('Celulares', ['Samsung Galaxy', 'Samsung']);
+```
+
+Inspecionando as variáveis __$iphone__ e __$galaxy__, 
+
+```php
+echo var_export($iphone, true) . PHP_EOL;
+echo var_export($galaxy, true) . PHP_EOL;
+```
+
+você deverá ver algo como:
+
+```
+Produto::__set_state(array(
+   'modelo' => 'iPhone S6',
+   'fabricante' => 'Apple',
+))
+Produto::__set_state(array(
+   'modelo' => 'Samsung Galaxy',
+   'fabricante' => 'Samsung',
+))
+```
 
 
 
