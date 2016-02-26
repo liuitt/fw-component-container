@@ -58,28 +58,3 @@ abstract class AbstractContainer implements ContainerInterface
     }
 
 }
-
-/*
-$container = new Container();
-$container->setEnvironment('dev', 'prod', 'homolog');
-
-$product = $container->register(new Product($id), 'Product');
-$product = $container->registerProduct($id);
-
-$container->registerArray([
-    'Produto' => [ new Product($id), 'Product' ],
-    'Item' => new CartItem($container->resolveProduct())
-]);
-
-$item = $container->register(new CartItem($product));
-$item = $container->register(new CartItem($container->resolve('Product')));
-$item = $container->register(new CartItem($container->resolveProduct()));
-$item = $container->registerWith('CartItem', [$container->resolveProduct()]);
-$item = $container->registerWith('CartItem', [$container->resolveWith('Product', [1])])
-
-Container::resolveProductFromHomolog();
-Container::resolveProductFromHomologWith([1]);
-*/
-
-
-
