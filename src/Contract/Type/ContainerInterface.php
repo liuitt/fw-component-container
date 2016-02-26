@@ -1,4 +1,4 @@
-<?php namespace Liuitt\Component\Contract\Type;
+<?php namespace Liuitt\Component\Container\Contract\Type;
 
 /**
  * Liuitt Framework (http://framework.liuitt.com/)
@@ -11,9 +11,9 @@
 
 interface ContainerInterface
 {
-	public function register(String $className, String $alias);
-	public function registerArray(Array $data)
-	public function resolve(String $aliasOrNamespace);
-	public function resolveWith(String $aliasOrNamespace, Array $args);
-	public function dispose(String $aliasOrNamespace);
+	public static function register(String $alias, Callable $callback);
+	public static function registerArray(Array $data);
+	public static function resolve(String $alias);
+	public static function resolveWith(String $aliasOrNamespace, $args);
+	public static function dispose(String $aliasOrNamespace);
 }
