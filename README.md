@@ -82,7 +82,8 @@ $celular = $container->resolve('Celular');
 Inspecionando a variável $celular, você deverá ver algo como:
 
 ```php
-<pre>echo var_export($celular, true) . '<hr>';</pre>
+echo '<pre>';
+echo var_export($celular, true) . '<hr>';
 ```
 
 
